@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Coding online {HTML & CSS}</title>
+    <link rel="shortcut icon" href="photo/1.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1 class="HTMLandCSSEditor"> Try HTML & CSS Live</h1>
+
+  <div class="editor-container">
+    <div class="editor-box">
+      <textarea id="html" placeholder="Write your HTML here..."></textarea>
+    </div>
+
+    <div class="editor-box">
+      <textarea id="css" placeholder="Write your CSS here..."></textarea>
+    </div>
+  </div>
+
+  <div class="upload-box">
+  <input type="file" id="fileUpload">
+</div>
+
+
+  <div class="editor-buttons">
+    <button onclick="updatePreview()">Run Code</button>
+    <button onclick="resetCode()">Reset Code</button>
+    <button onclick="saveCode()">Save Code</button>
+    <button onclick="downloadCode()">Download file</button>
+  </div>
+
+  <iframe id="preview" title="Live Preview"></iframe>
+
+  <script>
+    const htmlInput = document.getElementById("html");
+    const cssInput = document.getElementById("css");
+    const preview = document.getElementById("preview");
+
+    function updatePreview() {
+      const html = htmlInput.value;
+      const css = `<style>${cssInput.value}</style>`;
+      preview.srcdoc = css + html;
+    }
+
+    function resetCode() {
+      htmlInput.value = "";
+      cssInput.value = "";
+      updatePreview();
+    }
+
+    function saveCode() {
+      localStorage.setItem("workspaceHTML", htmlInput.value);
+      localStorage.setItem("workspaceCSS", cssInput.value);
+      alert("Code saved locally.");
+    }
+
+    function downloadCode() {
+      const html = htmlInput.value;
+      const css = `<style>${cssInput.value}</style>`;
+      const fullCode = `<!DOCTYPE html><html><head><meta charset='UTF-8'>${css}</head><body>${html}</body></html>`;
+      const blob = new Blob([fullCode], { type: "text/html" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "P & D Group-Academy.workspace.html";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // Load saved code on page load
+    window.onload = () => {
+      const savedHTML = localStorage.getItem("workspaceHTML");
+      const savedCSS = localStorage.getItem("workspaceCSS");
+      if (savedHTML) htmlInput.value = savedHTML;
+      if (savedCSS) cssInput.value = savedCSS;
+      updatePreview();
+    };
+
+    document.getElementById("fileUpload").addEventListener("change", function () {
+  const file = this.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function () {
+    const fileType = file.type;
+
+    if (fileType.startsWith("image/")) {
+      const imgTag = `<img src="${reader.result}" alt="Uploaded Image" style="max-width:100%;">`;
+      htmlInput.value += `\n${imgTag}`;
+    } else {
+      const fileTag = `<a href="${reader.result}" target="_blank">Download ${file.name}</a>`;
+      htmlInput.value += `\n${fileTag}`;
+    }
+
+    updatePreview();
+  };
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+});
+
+  </script>
+
+</body>
+</html>

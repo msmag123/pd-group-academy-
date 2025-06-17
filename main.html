@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More About The P & D Group-Academy</title>
+    <link rel="shortcut icon" href="photo/1.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+// Show the element after 2.5 seconds
+setTimeout(() => {
+  document.getElementById('returnHint').classList.add('visible');
+}, 2500);
+
+// Navigate on Ctrl + P
+window.addEventListener('keydown', function (e) {
+  if (e.ctrlKey && e.key.toLowerCase() === 'm') {
+    e.preventDefault();
+    window.location.href = 'index.html'; // غير الرابط حسب صفحتك
+  }
+});
+
+</script>
+<body>
+    <header>
+        <!--<img src="photo/1.jpg" alt="P & D Group logo" class="logo">-->
+        <h1 class="logo1">P & D GROUP</h1>
+        <nav class="navigation">
+            <ul> 
+                <li><a href="#Information-and-laws-you-may-need">Information and laws </a></li>
+                <li><a href="#Interactive-lectures">Interactive lectures </a></li>
+                <li><a href="#Workspace">Workspace </a></li>
+                <li><a href="#certificate">How do I get the certificate?</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr />
+    <!------------------------------------------------------------------>
+      <div id="returnHint" class="hidden">
+          <span class="text">Press <strong>Ctrl + m</strong> to return to the homepage</span>
+      </div>   
+    <!------------------------------------------------------------------>
+
+    <section class="rules-section" id="laws">
+  <div class="rules-container">
+    <div class="rules-text">
+      <h2 class="rules-title"><span>Information</span> and <span>laws</span> you may need!</h2>
+      <p class="rules-desc">
+        In this section, you'll find some information and rules you should know.  
+        If you violate these rules, you'll receive three warnings, and on the fourth violation,  
+        your membership will be removed by a moderator.
+      </p>
+      
+      <details>
+    <summary> Laws and important information</summary>
+    <ul class="laws">
+      <li>Sharing lecture links with unregistered users is prohibited.</li>
+      <li>Attendance on time is a condition for obtaining the certificate.</li>
+      <li>Each interactive lecture counts towards the final assessment.</li>
+      <li>You can't take a girl's number from the group, and you can't insult her.</li>
+      <li>Each lecture will be recorded after completion and we will send it to the group the next day.</li>
+      <li>You must do your homework for every lecture without any excuses.</li>
+      <li>It is best to prepare a notebook before the lecture to record the most important points.</li>
+      <li>Any violation will result in expulsion from the academy, but only after three warnings.</li>
+    </ul>
+  </details>
+    </div>
+    <div class="rules-image">
+        <img src="photo/undraw_join.png" alt="hero image" class="heroImg3">
+    </div>
+  </div>
+</section>
+
+      <!--<a href="Dawnload Tables of Course/Computer basics - Sheet1.pdf " download translate="yes" target="_blank">View Table 1 {Computer Basics}</a><br>-->
+<!---------------------------------------------------------------------------------------->
+<div class="section1">
+<section id="Interactive-lectures" class="Interactive-lectures">
+  <h2 style="text-align: center; font-size: 2.8rem; color: #38bdf8; margin-bottom: 10px;">  Interactive lectures</h2>
+  <p style="text-align: center; color: #484d55; margin-bottom: 50px; font-size: 1.1rem;">
+    Everything you need to follow live lectures, know the time, and enter immediately 
+  </p>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center;">
+    <!-- كارت الدورة -->
+    <div  onclick="window.location.href='computer.html'" style="cursor: pointer; background-color: #1e293b; border-radius: 15px; padding: 25px; width: 310px; box-shadow: 0 0 10px rgba(0,0,0,0.2); transition: transform 0.3s;" >
+      <h3 style="color: #facc15; font-size: 1.5rem;">   Computer Basics</h3>
+      <p> Interactive lectures 10 </p>
+      <p> Click here to view it </p>
+    </div>
+
+    <div onclick="window.location.href='programming.html'" style="cursor: pointer; background-color: #1e293b; border-radius: 15px; padding: 25px; width: 310px; box-shadow: 0 0 10px rgba(0,0,0,0.2); transition: transform 0.3s;" >
+      <h3 style="color: #facc15; font-size: 1.5rem;">Programming Basics</h3>
+      <p> Interactive lectures 10 </p>
+      <p> Click here to view it </p>
+    </div>
+
+    <div onclick="window.location.href='Python.html'" style="cursor: pointer; background-color: #1e293b; border-radius: 15px; padding: 25px; width: 310px; box-shadow: 0 0 10px rgba(0,0,0,0.2); transition: transform 0.3s;">
+      <h3 style="color: #facc15; font-size: 1.5rem; ">Python Basics</h3>
+      <p> Interactive lectures 10 </p>
+      <p> Click here to view it </p>
+    </div>
+
+    <div onclick="window.location.href='HTML.html'" style="cursor: pointer; background-color: #1e293b; border-radius: 15px; padding: 25px; width: 310px; box-shadow: 0 0 10px rgba(0,0,0,0.2); transition: transform 0.3s;">
+      <h3 style="color: #facc15; font-size: 1.5rem;">HTML</h3>
+      <p> Interactive lectures 10 </p>
+      <p> Click here to view it </p>
+    </div>
+
+    <div onclick="window.location.href='CSS.html'" style="cursor: pointer; background-color: #1e293b; border-radius: 15px; padding: 25px; width: 310px; box-shadow: 0 0 10px rgba(0,0,0,0.2); transition: transform 0.3s;">
+      <h3 style="color: #facc15; font-size: 1.5rem;">CSS</h3>
+      <p> Interactive lectures 10 </p>
+      <p> Click here to view it </p>
+    </div>
+
+    <div onclick="window.location.href='Games_Development.html'" style="cursor: pointer; background-color: #1e293b; border-radius: 15px; padding: 25px; width: 310px; box-shadow: 0 0 10px rgba(0,0,0,0.2); transition: transform 0.3s;">
+      <h3 style="color: #facc15; font-size: 1.5rem;">Games development</h3>
+      <p> Interactive lectures 10 </p>
+      <p> Click here to view it </p>
+    </div>
+  </div>
+</section>
+
+ <section class="workspace" id="Workspace">
+  <div class="workspace-header">
+    <h2> Try the academy's code editor </h2>
+    <p>This is your workspace two for P & D Group Academy.</p>
+  </div>
+  <div class="workspace-cards">
+    <div class="card">
+      <h3> Try HTML & CSS Live... </h3>
+      <p>Run Code Online in Website for P & D Group-Academy</p>
+      <a href="HTML&CSS.html" target="_blank">Try it now</a>
+    </div>
+    <div class="card">
+      <h3> Online Code Editors... </h3>
+      <p> Run Code Online – Pick Your Language
+        Choose a language and start coding instantly in your browser!</p>
+      <a href="lang_of_prgramming.html" target="_blank">View languages</a>
+    </div>
+  </div>
+</section>
+</div>
+<!-------------------------------------------------------->
+
+    <section class="rules-section" id="certificate">
+  <div class="rules-container">
+    <div class="rules-text">
+      <h2 class="rules-title">How do I get the <span>certificate</span>?</h2>
+      <p class="rules-desc">
+        To receive the certificate, your cumulative GPA must be 90% or higher. How do I achieve this score? To achieve this score, you must complete course assignments, pass the final project, and engage with the group and lectures uploaded to YouTube. Live lectures are also available on Zoom every Sunday and Thursday at 5:00 PM, God willing.
+      </p>
+            <a href="certificate/Certificate Mohamed Salama.pdf" download="download" target="_blank" class="viewanddownloadcertificate"> The certificate</a><br>
+
+    </div>
+    <div class="rules-image">
+        <img src="photo/undraw_educatio.png" alt="certificate image" class="certificateImg">
+    </div>
+    
+  </div>
+        
+</section>
+
+</body>
+</html>

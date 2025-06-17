@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <link rel="shortcut icon" href="photo/1.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+  
+  
+</head>
+<body class="sessions-body">
+  <h1 class="sessions-h1">HTMl Sessions</h1>
+
+  
+  <div id="sessions-container"></div>
+
+  <div class="footer-sessions">Instructor: Eng. Mohamed</div>
+
+  <script>
+    const sessions = [
+  { title: "Lec 1 & 2", date: "2025-06-19", link: "https://us05web.zoom.us/j/86144785349?pwd=kGciXBKHeg5JBgSaI069AbR1aPu6J7.1" },
+  { title: "Lec 3 & 4", date: "2025-06-26", link: "https://us05web.zoom.us/j/86144785349?pwd=kGciXBKHeg5JBgSaI069AbR1aPu6J7.1" },
+  { title: "Lec 5 & 6", date: "2025-07-03", link: "https://us05web.zoom.us/j/86144785349?pwd=kGciXBKHeg5JBgSaI069AbR1aPu6J7.1" },
+  { title: "Lec 7 & 8", date: "2025-07-10", link: "https://us05web.zoom.us/j/86144785349?pwd=kGciXBKHeg5JBgSaI069AbR1aPu6J7.1" },
+  { title: "Lec 9 & 10", date: "2025-07-17", link: "https://us05web.zoom.us/j/86144785349?pwd=kGciXBKHeg5JBgSaI069AbR1aPu6J7.1" },
+  { title: "Lec 11 & 12", date: "2025-07-24", link: "https://us05web.zoom.us/j/86144785349?pwd=kGciXBKHeg5JBgSaI069AbR1aPu6J7.1" },
+  { title: "Lec 13 & 14", date: "2025-07-31", link: "https://us05web.zoom.us/j/86144785349?pwd=kGciXBKHeg5JBgSaI069AbR1aPu6J7.1" },
+  { title: "Lec 15 & 16", date: "2025-08-07", link: "https://us05web.zoom.us/j/86144785349?pwd=kGciXBKHeg5JBgSaI069AbR1aPu6J7.1" },
+  { title: "Lec 17 & 18", date: "2025-08-14", link: "https://us05web.zoom.us/j/86144785349?pwd=kGciXBKHeg5JBgSaI069AbR1aPu6J7.1" },
+  { title: "Lec 19 & 20", date: "2025-08-21", link: "https://us05web.zoom.us/j/86144785349?pwd=kGciXBKHeg5JBgSaI069AbR1aPu6J7.1" }
+];
+
+
+
+    const container = document.getElementById('sessions-container');
+    const now = new Date();
+
+    sessions.forEach((s, i) => {
+      const fullDate = new Date(`${s.date} 05:00`); // 5:00 PM actual session time
+      const openTime = new Date(fullDate.getTime() - 15 * 60000); // 15 mins before
+      const available = now >= openTime;
+
+      const div = document.createElement('div');
+      div.className = 'session';
+
+      div.innerHTML = `
+        <div class="session-info">
+          <strong>${s.title}</strong>
+          <small>${fullDate.toLocaleString('en-GB')} (Every Thursday & Sunday @ 5:00 PM)</small>
+        </div>
+        <div>
+          <button class="join-btn" ${!available ? 'disabled' : ''} onclick="handleJoin('${s.link}')">Join</button>
+        </div>
+      `;
+      
+      container.appendChild(div);
+    });
+
+    function handleJoin(link) {
+      alert("🔔 The session is now open! Good luck!");
+      window.open(link, '_blank');
+      
+    }
+  </script>
+</body>
+</html>

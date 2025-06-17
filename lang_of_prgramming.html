@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online Code Editors</title>
+    <link rel="shortcut icon" href="photo/1.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+  window.onload = function () {
+    filterCategory('none');
+  };
+
+  function filterCategory(category) {
+    const buttons = document.querySelectorAll('#languageButtons .run-btn');
+    buttons.forEach(btn => {
+      if (category === 'all') {
+        btn.style.display = 'inline-block';
+      } else if (category === 'none') {
+        btn.style.display = 'none';
+      } else if (btn.dataset.category.includes(category)) {
+        btn.style.display = 'inline-block';
+      } else {
+        btn.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+<body class="run-code-section">
+<section class="run-code-section">
+  <h2>Run Code Online – Instantly in Your Browser</h2>
+  <p>Select your favorite programming language and start coding right away.</p>
+
+  <!-- Filter Buttons -->
+  <div class="filter-buttons">
+    <button onclick="filterCategory('all')">All</button>
+    <button onclick="filterCategory('web')">Web Development</button>
+    <button onclick="filterCategory('mobile')">Mobile Development</button>
+    <button onclick="filterCategory('backend')">Backend / Systems</button>
+  </div>
+
+  <!-- Language Buttons -->
+  <div class="run-buttons" id="languageButtons">
+        <a href="https://playcode.io" target="_blank" class="run-btn htmlcss" data-category="web">HTML/CSS/JS</a>
+    <a href="https://playcode.io" target="_blank" class="run-btn javascript" data-category="web">JavaScript</a>
+    <a href="https://www.typescriptlang.org/play" target="_blank" class="run-btn typescript" data-category="web">TypeScript</a>
+    <a href="https://www.onlinegdb.com/online_php_interpreter" target="_blank" class="run-btn php" data-category="web">PHP</a>
+    <a href="https://sass-lang.com/playground/" target="_blank" class="run-btn sass" data-category="web">SASS</a>
+    <a href="https://stackblitz.com/edit/angular-live-compiler?file=src%2Fapp%2Fapp.component.ts" target="_blank" class="run-btn angular" data-category="web">Angular</a>
+
+    <!-- 📱 Mobile Development -->
+    <a href="https://replit.com/languages/swift" target="_blank" class="run-btn swift" data-category="mobile">Swift</a>
+    <a href="https://replit.com/languages/kotlin" target="_blank" class="run-btn kotlin" data-category="mobile">Kotlin</a>
+    <a href="https://replit.com/languages/java10" target="_blank" class="run-btn java" data-category="mobile">Java</a>
+    <a href="https://dartpad.dev/" target="_blank" class="run-btn dart" data-category="mobile">Dart</a>
+
+    <!-- ⚙️ Backend / Systems -->
+    <a href="https://replit.com/languages/python3" target="_blank" class="run-btn python" data-category="backend">Python</a>
+    <a href="https://www.onlinegdb.com/online_c_compiler" target="_blank" class="run-btn c" data-category="backend">C</a>
+    <a href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" class="run-btn cpp" data-category="backend">C++</a>
+    <a href="https://replit.com/languages/ruby" target="_blank" class="run-btn ruby" data-category="backend">Ruby</a>
+    <a href="https://replit.com/languages/go" target="_blank" class="run-btn go" data-category="backend">Go</a>
+    <a href="https://replit.com/languages/rust" target="_blank" class="run-btn rust" data-category="backend">Rust</a>
+    <a href="https://replit.com/languages/bash" target="_blank" class="run-btn bash" data-category="backend">Bash</a>
+    <a href="https://dotnetfiddle.net" target="_blank" class="run-btn csharp" data-category="backend">C#</a>
+    <a href="https://replit.com/languages/nodejs" target="_blank" class="run-btn node" data-category="backend">Node.js</a>
+    <a href="https://sqliteonline.com" target="_blank" class="run-btn sql" data-category="backend">SQL</a>
+
+  </div>
+</section>
+
+
+
+
+
+
+</body>
+</html>
